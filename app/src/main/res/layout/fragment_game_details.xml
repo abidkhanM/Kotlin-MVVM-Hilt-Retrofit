@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="@dimen/margin_1x"
+                android:layout_marginTop="@dimen/margin_2x"/>
+
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_label"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/margin_1x"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image"/>
+
+            <TextView
+                android:id="@+id/gameName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_name"
+                android:textSize="15sp"
+                android:layout_margin="@dimen/margin_1x"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@+id/nameLabel"
+                app:layout_constraintTop_toBottomOf="@+id/image"/>
+
+            <TextView
+                android:id="@+id/releaseLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/release_label"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/margin_1x"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameLabel"/>
+
+            <TextView
+                android:id="@+id/released"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_name"
+                android:textSize="15sp"
+                android:layout_margin="@dimen/margin_1x"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@+id/releaseLabel"
+                app:layout_constraintTop_toBottomOf="@+id/nameLabel"/>
+
+            <LinearLayout
+                android:id="@+id/descriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releaseLabel">
+                <TextView
+                    android:id="@+id/descriptionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description_label"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/margin_1x"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_name"
+                    android:textSize="15sp"
+                    android:maxLines="5"
+                    android:textDirection="inherit"
+                    android:textAlignment="inherit"
+                    android:layout_margin="@dimen/margin_1x"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rating_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:elevation="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descriptionLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/rating_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/ratings_label"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RatingBar
+                        android:id="@+id/userProvidedRating"
+                        style="@style/Widget.AppCompat.RatingBar.Indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="11dp"
+                        android:elevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rating_label" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</layout>
