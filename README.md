@@ -1,4 +1,4 @@
-Case Study RawG game API Example Implementation
+RawG game API Example Implementation (Future Changes expected and inline by adding ** Data ** and ** Domain ** Layers)
 Google recommended app architecture MVVM with their official guidelines, includes:
  - ViewModel
 
@@ -17,9 +17,6 @@ Google recommended app architecture MVVM with their official guidelines, include
  - Safe Args (Passing data between fragments)
 
  [Guide!](https://developer.android.com/jetpack/guide#recommended-app-arch)
-
-
- ![android-architecture](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
 
 
 ** Use vector drawables instead of pngs **
